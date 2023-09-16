@@ -5,15 +5,15 @@
 # make the script stop on error
 set -e
 
-BIN_ABSPATH="$(dirname "$(readlink -f "${0}")")"
-
-KERNEL_MODULE_NAME='snd-hda-scodec-cs35l41'
-DKMS_MODULE_VERSION='0.1'
-
 if [[ ! $EUID = 0 ]]; then
   echo "Only root can perform this setup. Aborting."
   exit 1
 fi
+
+BIN_ABSPATH="$(dirname "$(readlink -f "${0}")")"
+
+KERNEL_MODULE_NAME='snd-hda-scodec-cs35l41'
+DKMS_MODULE_VERSION='0.1'
 
 # set up the actual DKMS module -------------------------------------------------------------------
 
