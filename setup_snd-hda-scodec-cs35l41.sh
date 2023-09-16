@@ -16,7 +16,7 @@ KERNEL_MODULE_NAME='snd-hda-scodec-cs35l41'
 DKMS_MODULE_VERSION='0.1'
 
 # set up the actual DKMS module -------------------------------------------------------------------
-
+echo "Setting up the DKMS module for ${KERNEL_MODULE_NAME}..."
 "${BIN_ABSPATH}/dkms-module_create.sh" "${KERNEL_MODULE_NAME}" "${DKMS_MODULE_VERSION}"
 
 # create the patch file to apply to the source of the snd-hda-scodec-cs35l41 kernel module
