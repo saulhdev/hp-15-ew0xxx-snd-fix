@@ -43,6 +43,9 @@ elif grep -q "^ID=arch" /etc/os-release; then
   pacman -S pahole dkms base-devel linux-headers
 elif grep -q "^ID=fedora" /etc/os-release; then
   dnf install dwarves dkms kernel-devel kernel-headers  
+elif grep -q "^ID=debian" /etc/os-release; then
+  echo "debian os detected"
+  apt install dwarves dkms kernel-devel kernel-headers  
 else
   echo "Auto-installing kernel headers not (yet) supported for your Linux distro. You might want to modify the distro-specific commands."
 fi
